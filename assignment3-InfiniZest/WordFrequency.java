@@ -1,6 +1,6 @@
 import java.lang.Comparable;
 
-public class WordFrequency implements Comparable{
+public class WordFrequency implements Comparable<WordFrequency>{
     String word;
     int frequency;
     
@@ -11,12 +11,17 @@ public class WordFrequency implements Comparable{
 
     // TODO
     @Override
-    public int compareTo(Object item) {
+    public int compareTo(WordFrequency item) {
 	return 0;
     }
 
     public boolean equals(Object item) {
-	return false;
+	WordFrequency target = (WordFrequency) item;
+	if(target.word == word)
+	    return true;
+	else
+	    return false; 
+	 
     }
 
     public void increment() {
