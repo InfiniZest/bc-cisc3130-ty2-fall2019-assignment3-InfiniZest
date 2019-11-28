@@ -1,3 +1,10 @@
+/******************************************************************************
+ *  IMRAN KHAN | 23304096
+ *  WordFrequency.java is the heart of the operation for finding word 
+ *  frequencies, specifically, in the case of this project is lyrical 
+ *  frequencies.
+ ******************************************************************************/
+
 import java.lang.Comparable;
 
 public class WordFrequency implements Comparable<WordFrequency>{
@@ -9,10 +16,9 @@ public class WordFrequency implements Comparable<WordFrequency>{
 	this.frequency = 1;
     }
 
-    // TODO
     @Override
     public int compareTo(WordFrequency item) {
-	return Integer.valueOf(this.frequency).compareTo(item.frequency);
+	return Integer.valueOf(item.frequency).compareTo(this.frequency);
     }
 
     public boolean equals(Object item) {
@@ -28,6 +34,6 @@ public class WordFrequency implements Comparable<WordFrequency>{
     }
 
     public String toString() {
-	return this.word + " " + this.frequency;
+	return this.frequency + ": " + this.word;
     }
 }

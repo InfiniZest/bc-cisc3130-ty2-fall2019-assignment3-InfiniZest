@@ -1,10 +1,16 @@
-/* This class will retrieve song lyrics */
+/******************************************************************************
+ *  IMRAN KHAN | 23304096
+ *  Song.java stores song lyrics in a LinkedList and get its frequency
+******************************************************************************/
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 import java.util.ListIterator;
-import java.util.LinkedList;    
+import java.util.LinkedList;
+import java.io.PrintWriter;
+import java.io.IOException;
 
 public class Song {
     private String word;
@@ -30,6 +36,7 @@ public class Song {
 	    else
 		orderedWordList.add(wordFreq);
 	}
+	songLyricsIn.close();
     }
 
     // The <T extends Comparable<? super T>> is the generic method
@@ -40,14 +47,13 @@ public class Song {
 	T curr;
 	int i = 0;
 
-	// TODO! ListIterator isn't traversing through anything!
 	// Traverse through iter
 	while(iter.hasNext()) {
 	    // gets the current list value
 	    curr = iter.next();
 	    // checks if the current value matches the target value
 	    if(curr.equals(target)) {
-		// don't set curr instead go to the previous iter and return that
+		// don't set curr instead go to the previous iter and return iter
 		iter.previous();
 		return iter;
 	    } else if(target.compareTo(curr) < 0) 
@@ -56,15 +62,13 @@ public class Song {
 	return null;  
     }
     
-    public void getWordFrequency() {
-	ListIterator iter = orderedWordList.listIterator(0);
-	int count = 0;
-	int i;
-	String blanks;
-
-	while(iter.hasNext()) {
-	    String str = iter.next().toString();
-	    System.out.println(str);
+    public void getWordFrequency() throws IOException {
+	ListIterator iterFreq = orderedWordList.listIterator();
+	PrintWriter outputFrequency = new PrintWriter("SelectedTrackFreqOutput.txt");
+	while(iterFreq.hasNext()) {
+	    outputFrequency.println(iterFreq.next().toString());
 	}
+	System.out.println("Frequency Printed to file SelectedTrackFreqOutput.txt");
+	outputFrequency.close();
     }
 }

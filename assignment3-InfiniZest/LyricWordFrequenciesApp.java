@@ -1,3 +1,10 @@
+/******************************************************************************
+ *  IMRAN KHAN | 23304096
+ *  LyricWordFrequenciesApp.java is the main driver app that retrives the song 
+ *  file path(s) and instantiates the Song class which stores the selected 
+ *  song in a list structure and performs frequency operations.
+******************************************************************************/
+
 import java.io.File;
 import java.util.Scanner;
 import java.io.IOException;
@@ -25,11 +32,12 @@ public class LyricWordFrequenciesApp {
 	    }
 	    fileIndex++;
 	}
-	
 	System.out.print("\t\t\tTrack Number: ");
 	Scanner scanLyricData = new Scanner(System.in);
 	int trackSelected = scanLyricData.nextInt();
 	Song selectedSong = songList.get(trackSelected);
 	selectedSong.getWordFrequency();
+	getSong.close();
+	scanLyricData.close();
     }
 }
