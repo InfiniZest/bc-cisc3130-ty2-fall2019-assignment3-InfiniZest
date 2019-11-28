@@ -12,7 +12,7 @@ public class LyricWordFrequenciesApp {
 	System.out.println("Select one of the following tracks from the list below:");
 	File folder = new File("Songs");
 	File[] filesList = folder.listFiles();
-	Hashtable<Song, Integer> songList = new Hashtable<Song, Integer>();
+	Hashtable<Integer, Song> songList = new Hashtable<Integer, Song>();
 	// User selects which song to find its word frequencies
 	Scanner getSong = new Scanner(System.in);
 	int songIndex = 1;
@@ -20,7 +20,7 @@ public class LyricWordFrequenciesApp {
 	for(File file : filesList) {
 	    if(file.isFile() & file.getName().endsWith(".txt")) {
 		System.out.println("\t" + songIndex + ". " + file.getName());
-		songList.put(new Song(file), songIndex);
+		songList.put(songIndex, new Song(file));
 		songIndex++;
 	    }
 	    fileIndex++;
@@ -29,6 +29,7 @@ public class LyricWordFrequenciesApp {
 	System.out.print("\t\t\tTrack Number: ");
 	Scanner scanLyricData = new Scanner(System.in);
 	int trackSelected = scanLyricData.nextInt();
-	
+	Song selectedSong = songList.get(trackSelected);
+	//selectedSong.getWordFrequency();
     }
 }

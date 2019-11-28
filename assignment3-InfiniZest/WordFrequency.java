@@ -12,12 +12,16 @@ public class WordFrequency implements Comparable<WordFrequency>{
     // TODO
     @Override
     public int compareTo(WordFrequency item) {
-	return 0;
+	System.out.println(word + " " + item.word);
+	if(item.word.equalsIgnoreCase(word)) 
+	    return 0;
+	else
+	    return -1;
     }
 
     public boolean equals(Object item) {
 	WordFrequency target = (WordFrequency) item;
-	if(target.word == word)
+	if(target.word.equalsIgnoreCase(word))
 	    return true;
 	else
 	    return false; 
@@ -25,7 +29,7 @@ public class WordFrequency implements Comparable<WordFrequency>{
     }
 
     public void increment() {
-	
+	frequency++;
     }
 
     public String toString() {
