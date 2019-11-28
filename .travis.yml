@@ -1,0 +1,15 @@
+before_install: cd assignment3-InfiniZest
+
+language: java
+
+# safelist
+branches:
+  only:
+  - master
+
+script:
+  - javac LyricWordFrequenciesApp.java Song.java WordFrequency.java
+  - java LyricWordFrequenciesApp
+
+notifications:
+  email: false
