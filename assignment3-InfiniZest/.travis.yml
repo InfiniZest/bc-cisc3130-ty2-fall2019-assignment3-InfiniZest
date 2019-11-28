@@ -1,0 +1,15 @@
+language: java
+
+git:
+  depth: 3
+  
+# safelist
+branches:
+  only:
+  - master
+
+script:
+  - javac LyricWordFrequenciesApp.java Song.java WordFrequency.java
+
+notifications:
+  email: false
