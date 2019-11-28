@@ -1,8 +1,5 @@
 language: java
 
-git:
-  depth: 3
-  
 # safelist
 branches:
   only:
@@ -10,6 +7,7 @@ branches:
 
 script:
   - javac LyricWordFrequenciesApp.java Song.java WordFrequency.java
+  - java LyricWordFrequenciesApp
 
 notifications:
   email: false
