@@ -30,6 +30,6 @@ public class LyricWordFrequenciesApp {
 	Scanner scanLyricData = new Scanner(System.in);
 	int trackSelected = scanLyricData.nextInt();
 	Song selectedSong = songList.get(trackSelected);
-	//selectedSong.getWordFrequency();
+	selectedSong.getWordFrequency();
     }
 }

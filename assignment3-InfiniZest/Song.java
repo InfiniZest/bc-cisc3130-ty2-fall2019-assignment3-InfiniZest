@@ -30,7 +30,6 @@ public class Song {
 	    else
 		orderedWordList.add(wordFreq);
 	}
-	System.out.println("false");
     }
 
     // The <T extends Comparable<? super T>> is the generic method
@@ -45,7 +44,6 @@ public class Song {
 	// Traverse through iter
 	while(iter.hasNext()) {
 	    // gets the current list value
-	    System.out.println(i);
 	    curr = iter.next();
 	    // checks if the current value matches the target value
 	    if(curr.equals(target)) {
@@ -54,7 +52,6 @@ public class Song {
 		return iter;
 	    } else if(target.compareTo(curr) < 0) 
 		return null;
-	    i++;
 	}
 	return null;  
     }

@@ -6,26 +6,21 @@ public class WordFrequency implements Comparable<WordFrequency>{
     
     public WordFrequency(String word) {
 	this.word = word;
-	frequency = 1;
+	this.frequency = 1;
     }
 
     // TODO
     @Override
     public int compareTo(WordFrequency item) {
-	System.out.println(word + " " + item.word);
-	if(item.word.equalsIgnoreCase(word)) 
-	    return 0;
-	else
-	    return -1;
+	return Integer.valueOf(this.frequency).compareTo(item.frequency);
     }
 
     public boolean equals(Object item) {
 	WordFrequency target = (WordFrequency) item;
-	if(target.word.equalsIgnoreCase(word))
+	if(target.word.equalsIgnoreCase(this.word))
 	    return true;
 	else
 	    return false; 
-	 
     }
 
     public void increment() {
@@ -33,6 +28,6 @@ public class WordFrequency implements Comparable<WordFrequency>{
     }
 
     public String toString() {
-	return "";
+	return this.word + " " + this.frequency;
     }
 }
